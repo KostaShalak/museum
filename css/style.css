@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -90,7 +94,7 @@ img {
 .welcome {
     background-image: url(../assets/image/welcome.jpg);
     background-repeat: no-repeat;
-    background-position: calc(50% + 352px) 100%;
+    background-position: calc(35% + 352px) 100%;
     min-height: 750px;
     padding-top: 114px;
 }
@@ -100,7 +104,7 @@ img {
 }
 
 .welcome__title,
-.explore__title  {
+.explore__title {
     font-family: 'Forum', cursive;
     font-weight: 400;
     font-size: 80px;
@@ -251,8 +255,31 @@ img {
     max-width: 720px;
 }
 
-.video__play {
+.video__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 75px;
+    padding-bottom: 55px;
+}
+
+.video__title {
+    font-family: 'Forum';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #9D8665;
+}
+
+.video__text {
+    max-width: 50%;
+}
+
+.video__play {
+    padding-bottom: 75px;
     position: relative;
 }
 
@@ -332,30 +359,7 @@ img {
     margin-right: 40px;
 }
 
-.video__info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 75px;
-}
-
-.video__title {
-    font-family: 'Forum';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: #9D8665;
-}
-
-.video__text {
-    max-width: 50%;
-}
-
-.tickets__title {
+.gallery__title {
     font-family: 'Forum', cursive;
     font-weight: 400;
     font-size: 80px;
@@ -363,12 +367,42 @@ img {
     letter-spacing: 5px;
     text-transform: uppercase;
     color: #FFFFFF;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.gallery__img {
+    overflow-y: hidden;
+    max-height: 2125px;
+}
+
+.gallery__img-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery__img-inner img {
+    max-height: 570px;
+    padding-bottom: 25px;
+}
+
+.tickets__title,
+.contacts__title {
+    font-family: 'Forum', cursive;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #9D8665;;
     margin-bottom: 100px;
     position: relative;
     padding-top: 75px;
 }
 
-.tickets__title::after {
+.tickets__title::after,
+.contacts__title::after {
     content: "";
     position: absolute;
     bottom: -25px;
@@ -387,7 +421,6 @@ img {
     font-weight: bold;
     font-size: 28px;
     line-height: 33px;
-    color: #FFFFFF;
     margin-bottom: 50px;
 }
 
@@ -397,7 +430,6 @@ img {
     font-weight: 300;
     font-size: 22px;
     line-height: 26px;
-    color: #FFFFFF;
     margin-bottom: 50px;
 }
 
@@ -407,6 +439,7 @@ img {
 
 .tickets__wrapper {
     display: flex;
+    padding-bottom: 75px;
 }
 
 .tickets__options {
@@ -423,13 +456,13 @@ img {
 .tickets__amount {
     display: flex;
     flex-direction: column;
+    align-items: end;
 }
 
 .tickets__amout-title {
     font-weight: bold;
     font-size: 28px;
     line-height: 33px;
-    color: #FFFFFF;
     margin-bottom: 10px;
 }
 
@@ -437,13 +470,12 @@ img {
     font-weight: 300;
     font-size: 22px;
     line-height: 26px;
-    color: #FFFFFF;
     margin-bottom: 10px;
+    margin-right: 45px;
 }
 
 .tickets__amount button {
-    border: 1px solid #FFFFFF;
-    color: #FFFFFF;
+    border: 1px solid #000000;
     padding: 12px;
     width: 150px;
     margin-bottom: 35px;
@@ -463,9 +495,18 @@ img {
 .tickets__amount input {
     border: none;
     background: transparent;
-    color: #FFFFFF;
+    color: #000000;
     width: 120px;
     text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
 }
 
 .tickets__amount button::after {
@@ -482,20 +523,91 @@ img {
     font-size: 28px;
     line-height: 33px;
     letter-spacing: 1.65px;
-    color: #FFFFFF;
+    color: #000000;
     margin-bottom: 50px;
 }
 
 .tickets__amount-buy {
-    background-color: #FFFFFF;
+    background-color: #000000;
     border-radius: 2px;
     font-weight: 300;
     font-size: 22px;
     line-height: 26px;
     letter-spacing: 2px;
-    color: #000000 !important;
-    padding: 15px 40px;
-    width: 175px;
+    color: #FFFFFF !important;
+    padding: 12px 38px;
+    width: 176px;
 }
+
+.parallax__bg {
+    background-image: url(../assets/image/parallax.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    max-width: 100%;
+    height: 400px;
+}
+
+.contacts__box {
+    display: flex;
+    padding-bottom: 75px;
+}
+
+.contacts__name {
+    margin-bottom: 50px;
+}
+
+.contacts__links a {
+    color: #000000;
+    line-height: 26px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.footer__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 85px;
+}
+
+.footer__list {
+    display: flex;
+}
+.footer__list-left-block {
+    margin-right: 75px;
+}
+
+.footer__list-right-block {
+    margin-left: 75px;
+}
+
+.footer__socials {
+    padding-top: 90px;
+    padding-bottom: 55px;
+}
+
+.social__link img {
+    margin-left: 25px;
+}
+.footer__top-line {
+    border-top: 3px solid #666666;
+}
+
+.copyright__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footer__copyright-date,
+.footer__copyright-org,
+.footer__copyright-dev {
+    color: #FFFFFF;
+    line-height: 22px;
+    letter-spacing: 2px;
+}
+
 
 
